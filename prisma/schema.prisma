@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Theme {
+  LIGHT
+  DARK
+}
+
+enum TaskStatus {
+  IN_PROGRESS
+  COMPLETED
+  OVERDUE
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum TaskCategory {
+  PERSONAL
+  WORK
+  STUDY
+  PROJECT
+  DEVELOPMENT
+  DESIGN
+  MARKETING
+  HOME
+}
+
+model User {
+  id        String      @id @default(cuid())
+  name      String
+
+  email     String      @unique
+  password  String
+
+  image     String?
+
+  tasks     Task[]
+
+  settings  UserSettings?
+
+  createdAt DateTime    @default(now()) @map(name: "created_at")
+  updatedAt DateTime    @updatedAt @map(name: "updated_at")
+
+  @@map(name: "users")
+}
+
+model Task {
+  id        String      @id @default(cuid())
+  title     String
+  description String?
+
+  status    TaskStatus @default(IN_PROGRESS)
+  priority  TaskPriority @default(MEDIUM)
+
+  dueDate   DateTime?
+
+
+  category  TaskCategory @default(PERSONAL)
+
+
+  userId    String
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime    @default(now()) @map(name: "created_at")
+  updatedAt DateTime    @updatedAt @map(name: "updated_at")
+
+  @@map(name: "tasks")
+}
+
+model UserSettings {
+  id        String      @id @default(cuid())
+
+  userId    String      @unique
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  theme     Theme       @default(LIGHT)
+  accent    String      @default("#0DA692")
+
+  taskReminders Boolean   @default(true)
+  dueDateAlerts Boolean   @default(true)
+  weeklySummary Boolean   @default(false)
+
+  taskNotifications Boolean @default(false)
+
+  createdAt DateTime    @default(now()) @map(name: "created_at")
+  updatedAt DateTime    @updatedAt @map(name: "updated_at")
+
+  @@map(name: "user_settings")
+}
