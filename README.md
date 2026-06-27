@@ -23,7 +23,7 @@ A simple and modern task management application built with Next.js.
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/task-manager.git
+git clone https://github.com/SkyXnight/task-manager.git
 cd task-manager
 npm install
 npm run dev
