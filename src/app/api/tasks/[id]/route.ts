@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import { getUser } from "@/lib/getUser";
-import { TaskPriority, TaskCategory } from "@/generated/prisma/client";
+import { TaskPriority, TaskCategory } from "@prisma/client";
 
 export async function PATCH(
     req: Request,
