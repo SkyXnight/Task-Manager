@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MoveRight, CalendarRange, Dot, Tag, Check, Inbox } from "lucide-react";
 import { prisma } from "@/lib/prisma";
-import { TaskPriority, TaskStatus } from "@/generated/prisma/client";
+import { TaskPriority, TaskStatus } from "@prisma/client";
 
 export default async function RecentTasks() {
     const tasks = await prisma.task.findMany({

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { X, Check, ChevronDown } from "lucide-react";
-import { Task } from "@/generated/prisma/client";
+import { Task } from "@prisma/client";
 import { taskSchema } from "@/lib/validations/task.schema";
 
 type Priority = "LOW" | "MEDIUM" | "HIGH";

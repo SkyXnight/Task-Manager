@@ -1,6 +1,6 @@
 import { CalendarDays, MoveRight, Tag, Inbox } from "lucide-react";
 import { prisma } from "@/lib/prisma";
-import { TaskPriority } from "@/generated/prisma/client";
+import { TaskPriority } from "@prisma/client";
 import Link from "next/link";
 
 export default async function TodayTasks() {

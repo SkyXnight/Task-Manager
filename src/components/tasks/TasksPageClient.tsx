@@ -6,7 +6,7 @@ import { Plus, Search, Circle, Folder, Flag } from "lucide-react";
 import { FilterSelect } from "@/components/tasks/FilterSelect";
 import { BulkActionsBar } from "@/components/tasks/BulkActionsBar";
 import { TaskTable } from "@/components/tasks/TaskTable";
-import { Task } from "@/generated/prisma/client";
+import { Task } from "@prisma/client";
 import { SortSelect } from "@/components/tasks/SortSelect";
 import { CreateTaskModal } from "@/components/tasks/CreateTaskModal";
 import { EditTaskModal } from "./EditTaskModal";

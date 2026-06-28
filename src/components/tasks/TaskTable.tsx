@@ -16,7 +16,7 @@ import {
     House,
 } from "lucide-react";
 
-import { Task } from "@/generated/prisma/client";
+import { Task } from "@prisma/client";
 
 interface TaskTableProps {
     tasks: Task[];
