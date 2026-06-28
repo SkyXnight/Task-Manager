@@ -85,9 +85,9 @@ export async function PATCH(
 
 export async function DELETE(
     request: Request,
-    { params }: { params: { id: string } },
+    { params }: { params: Promise<{ id: string }> },
 ) {
-    const { id } = params;
+    const { id } = await params;
     const session = await getUser();
 
     if (!session) {
