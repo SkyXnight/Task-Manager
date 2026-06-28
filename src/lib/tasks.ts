@@ -1,9 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import {
-    TaskStatus,
-    TaskPriority,
-    TaskCategory,
-} from "@/generated/prisma/client";
+import { TaskStatus, TaskPriority, TaskCategory } from "@prisma/client";
 
 export type TaskFilters = {
     status?: string;
