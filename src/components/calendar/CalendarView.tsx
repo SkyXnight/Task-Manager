@@ -152,8 +152,8 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ tasks }) => {
 
     return (
         <div className="w-full flex gap-6 mt-6 items-start">
-            <div className="flex-1 bg-white border border-gray-200 rounded-xl shadow-[0_2px_12px_-2px_rgba(0,0,0,0.03)] overflow-hidden">
-                <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+            <div className="flex-1 bg-(--main-bg-color) border border-(--border-color) rounded-xl shadow-[0_2px_12px_-2px_rgba(0,0,0,0.03)] overflow-hidden">
+                <div className="flex items-center justify-between px-6 py-4 border-b border-(--border-color)">
                     <div className="flex items-center gap-2">
                         <CalendarIcon className="w-5 h-5 text-slate-500" />
                         <h2 className="text-lg font-bold text-slate-800">
@@ -164,7 +164,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ tasks }) => {
                     <div className="flex items-center gap-1.5">
                         <button
                             onClick={handlePrevMonth}
-                            className="p-1.5 border border-gray-200 rounded-lg hover:bg-slate-50 text-slate-600 transition-colors cursor-pointer"
+                            className="p-1.5 border border-(--border-color) rounded-lg hover:bg-slate-50 text-slate-600 transition-colors cursor-pointer"
                         >
                             <ChevronLeft className="w-4 h-4" />
                         </button>
@@ -183,27 +183,27 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ tasks }) => {
 
                                 setSelectedDateStr(toDateStr(today));
                             }}
-                            className="px-3 h-7 border border-gray-200 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors cursor-pointer"
+                            className="px-3 h-7 border border-(--border-color) rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors cursor-pointer"
                         >
                             Today
                         </button>
 
                         <button
                             onClick={handleNextMonth}
-                            className="p-1.5 border border-gray-200 rounded-lg hover:bg-slate-50 text-slate-600 transition-colors cursor-pointer"
+                            className="p-1.5 border border-(--border-color) rounded-lg hover:bg-slate-50 text-slate-600 transition-colors cursor-pointer"
                         >
                             <ChevronRight className="w-4 h-4" />
                         </button>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-7 text-center border-b border-gray-100 bg-slate-50/50 text-xs font-bold text-slate-500 uppercase tracking-wider py-2">
+                <div className="grid grid-cols-7 text-center border-b border-(--border-color) bg-slate-50/50 text-xs font-bold text-slate-500 uppercase tracking-wider py-2">
                     {daysOfWeek.map((d) => (
                         <div key={d}>{d}</div>
                     ))}
                 </div>
 
-                <div className="grid grid-cols-7 border-l border-t border-gray-50 bg-slate-50/10">
+                <div className="grid grid-cols-7 border-l border-t border-(--border-color) bg-slate-50/10">
                     {renderDays()}
                 </div>
             </div>

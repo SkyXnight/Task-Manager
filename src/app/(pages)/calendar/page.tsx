@@ -17,7 +17,7 @@ export default async function CalendarPage() {
         <div className="bg-(--bg-color) w-full min-h-screen flex flex-col px-15 pt-3 pb-10">
             <div className="w-full flex justify-between items-center h-20">
                 <div className="flex flex-col gap-1">
-                    <h1 className="text-2xl font-extrabold text-slate-900">
+                    <h1 className="text-2xl font-extrabold text-(--main-text-color)">
                         Calendar
                     </h1>
                     <span className="text-gray-500 tracking-wide">
