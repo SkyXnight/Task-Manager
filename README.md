@@ -16,9 +16,9 @@ A simple and modern task management application built with Next.js.
 - Next.js
 - React
 - TypeScript
-- Prisma (if used)
+- Prisma
 - Tailwind CSS
-- PostgreSQL / SQLite (if used)
+- PostgreSQL
 
 ## 📦 Installation
 
